@@ -21,7 +21,11 @@ declare function my-func ($arg1, $arg2) { 2 };
 
 declare private function unused-private() {
 	cts:search (fn:doc(), cts:and-query (())),
-	dbg:invoke ()
+	dbg:invoke (),
+	xdmp:user-roles (),
+	xdmp:to-json(),
+	xdmp:database-backup-status(),
+	xdmp:zip-create()
 };
 
 declare function unused-public() {

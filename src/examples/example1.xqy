@@ -11,12 +11,12 @@ declare variable $foo := 123.45;
 declare variable $bar := 1.0e+5;
 declare variable $foobar := 42;
 
-declare function foo:sqr ($number as xs:int) as xs:int
+declare function local:sqr ($number as xs:decimal) as xs:decimal
 {
 	$number * $number
 };
 
 let $baz := $foo + $bar
 
-return $baz + foo:sqr ($foo) + $foobar
+return $baz + local:sqr ($foo) + $foobar
 
