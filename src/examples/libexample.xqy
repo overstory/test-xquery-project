@@ -9,7 +9,7 @@ xquery version "1.0-ml";
 
 module namespace libexample = "urn:libexample";
 
-declare variable $foobar as xs:string external;
+(:declare variable $foobar as xs:string external;:)
 
 declare variable $exlibvar := fn:current-date();
 

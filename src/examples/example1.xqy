@@ -1,4 +1,4 @@
-xquery version '1.0-ml';
+xquery version '1.0';
 
 (: Jump to declaration / find usages
    Variables - prolog, let and parameters

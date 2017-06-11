@@ -5,9 +5,9 @@ declare namespace m="http://my.space";
 
 import module namespace ex="urn:libexample" at "libexample.xqy";
 
-declare variable $foobar as xs:string external;
-declare variable $m:nsvar external;
-declare variable $z:exter as xs:date external;
+declare variable $foobar as xs:string := xdmp:get-request-field ("foobar", "MISSING PARAM: foobar");
+declare variable $m:nsvar := xdmp:get-request-field ("m:nsvar", "MISSING PARAM: m:nsvar");
+declare variable $z:exter as xs:date := xdmp:get-request-field ("z:exter", "MISSING PARAM: z:exter") cast as xs:date;
 
 declare variable $blah := "This is a string";
 declare variable $integer := 42;
@@ -41,7 +41,6 @@ declare function local:foo ($s as xs:string)
 };
 
 (
-    xdmp:eval ("7 + 36"),
     fn:current-dateTime(),(: xdmp:elapsed-time(),:)
     local:foo ("This is A Mixed Case String"),
     local:foo ("This is Another Mixed Case String"),
